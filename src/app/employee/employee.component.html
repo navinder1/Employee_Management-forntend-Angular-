@@ -1,0 +1,98 @@
+<!-- src/app/employee/employee.component.html -->
+<div class="employee-container">
+  <div class="header">
+    <h1>Employee Management</h1>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+
+  <div class="actions">
+    <button class="add-btn" (click)="showAddForm = !showAddForm">
+      {{ showAddForm ? 'Cancel' : 'Add New Employee' }}
+    </button>
+  </div>
+
+  <!-- Add Employee Form -->
+  <div *ngIf="showAddForm" class="form-card">
+    <h3>Add New Employee</h3>
+    <form (ngSubmit)="addEmployee()">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input 
+          type="text" 
+          [(ngModel)]="newEmployee.full_name" 
+          name="full_name" 
+          placeholder="Enter full name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input 
+          type="email" 
+          [(ngModel)]="newEmployee.email" 
+          name="email" 
+          placeholder="Enter email"
+          required
+        />
+      </div>
+      <button type="submit" class="submit-btn">Add Employee</button>
+    </form>
+  </div>
+
+  <!-- Edit Employee Form -->
+  <div *ngIf="editingEmployee" class="form-card">
+    <h3>Edit Employee</h3>
+    <form (ngSubmit)="updateEmployee()">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input 
+          type="text" 
+          [(ngModel)]="editingEmployee.full_name" 
+          name="full_name" 
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input 
+          type="email" 
+          [(ngModel)]="editingEmployee.email" 
+          name="email" 
+          required
+        />
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="submit-btn">Update</button>
+        <button type="button" class="cancel-btn" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Employee List -->
+  <div class="employee-list">
+    <h3>Employee List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.full_name }}</td>
+          <td>{{ employee.email }}</td>
+          <td>
+            <button class="edit-btn" (click)="editEmployee(employee)">Edit</button>
+          </td>
+        </tr>
+        <tr *ngIf="employees.length === 0">
+          <td colspan="4" class="no-data">No employees found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

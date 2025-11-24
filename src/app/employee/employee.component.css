@@ -1,0 +1,164 @@
+/* src/app/employee/employee.component.css */
+.employee-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 10px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.actions {
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background: #5568d3;
+}
+
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.form-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.submit-btn {
+  padding: 10px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cancel-btn {
+  padding: 10px 24px;
+  background: #999;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.employee-list {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-list h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f5f5f5;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: 600;
+  color: #555;
+}
+
+.edit-btn {
+  padding: 6px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background: #5568d3;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
